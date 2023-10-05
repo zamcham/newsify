@@ -1,5 +1,7 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBook } from '@fortawesome/free-solid-svg-icons';
 
 const Navbar = () => {
     return (
@@ -13,7 +15,7 @@ const Navbar = () => {
                 <li><a href="#">Newest</a></li>
             </ul>
             <div className="actions">
-              <i className="fa fa-bars"></i>
+              <FontAwesomeIcon icon={faBook} />
               <input type="text" placeholder="Search..."/>
             </div>
         </nav>
