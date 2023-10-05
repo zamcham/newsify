@@ -11,9 +11,11 @@ const Navbar = () => {
                 <li><a href="#">Home</a></li>
                 <li><a href="#">Popular</a></li>
                 <li><a href="#">Newest</a></li>
-                <li><i className="fa fa-bars"></i></li>
-                <li><input type="text" placeholder="Search..."/></li>
             </ul>
+            <div className="actions">
+              <i className="fa fa-bars"></i>
+              <input type="text" placeholder="Search..."/>
+            </div>
         </nav>
     );
 };
