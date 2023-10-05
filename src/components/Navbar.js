@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBook } from '@fortawesome/free-solid-svg-icons';
 
 const Navbar = () => {
+    const readingListTotal = useSelector((store) => store.readingList.total);
     return (
         <nav>
             <div className="logo">
@@ -15,7 +16,10 @@ const Navbar = () => {
                 <li><a href="#">Newest</a></li>
             </ul>
             <div className="actions">
-              <FontAwesomeIcon icon={faBook} />
+              <div className="reading-list-icon">
+                <FontAwesomeIcon icon={faBook} />
+                <p>{readingListTotal}</p>
+              </div>
               <input type="text" placeholder="Search..."/>
             </div>
         </nav>
