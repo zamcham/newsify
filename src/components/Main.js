@@ -39,9 +39,8 @@ function Main() {
               <li
                 key={category}
                 className={selectedCategory === category ? 'active' : ''}
-                onClick={() => handleCategoryClick(category)}
               >
-                <a>
+                <a onClick={() => handleCategoryClick(category)}>
                 {category}
                 </a>
               </li>
