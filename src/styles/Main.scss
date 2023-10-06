@@ -3,11 +3,18 @@
     padding: 0 5vw;
 
     .sidebar {
-        width: 30vw;
+        width: 20%;
     }
 
     .news {
+        width: 50%;
         height: 90vh;
-        overflow: scroll;
+        padding: 0 2vw;
+        overflow-y: scroll;
+        scrollbar-width: thin;
+    }
+
+    .our-picks {
+        width: 30%;
     }
 }

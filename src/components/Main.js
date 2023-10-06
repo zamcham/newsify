@@ -50,6 +50,20 @@ function Main() {
         <div className="news">
           <News category={selectedCategory} />
         </div>
+        <div className="our-picks">
+          <ul>
+              {categories.map((category) => (
+                <li
+                  key={category}
+                  className={selectedCategory === category ? 'active' : ''}
+                >
+                  <a onClick={() => handleCategoryClick(category)}>
+                  {category}
+                  </a>
+                </li>
+              ))}
+            </ul>
+        </div>
       </div>
 
     );
