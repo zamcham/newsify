@@ -28,6 +28,7 @@ function News({ category }) {
                             source={article.source.name}
                             author={article.author}
                             date={article.publishedAt}
+                            articleLink={article.url}
                         />
                     </li>
                 ))}
