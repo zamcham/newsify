@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import NewsCard from './NewsCard';
 
 function News({ category }) {
-    const [articles, setArticles] = useState([]);
+    const [articles, setArticles] = useState([]);    
 
     useEffect(() => {
         async function fetchNews() {
@@ -26,6 +26,8 @@ function News({ category }) {
                             image={article.urlToImage}
                             title={article.title}
                             source={article.source.name}
+                            author={article.author}
+                            date={article.publishedAt}
                         />
                     </li>
                 ))}
