@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import NewsCard from './NewsCard';
 
 function News({ category }) {
     const [articles, setArticles] = useState([]);
@@ -18,12 +19,16 @@ function News({ category }) {
                 <h2>{category} Headlines</h2>
             </div>
             <div className='cards-container'>
-                
+
             </div>
             <ul>
                 {articles.map(article => (
                     <li key={article.url}>
-                        <a href={article.url}>{article.title}</a>
+                        <NewsCard
+                            image={article.urlToImage}
+                            title={article.title}
+                            source={article.source.name}
+                        />
                     </li>
                 ))}
             </ul>
