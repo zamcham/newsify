@@ -14,13 +14,11 @@ function News({ category }) {
     }, [category]);
 
     return (
+        <>
+        <div className='headline'>
+            <h2>{category} Headlines</h2>
+        </div>
         <div className='news-container'>
-            <div className='head'>
-                <h2>{category} Headlines</h2>
-            </div>
-            <div className='cards-container'>
-
-            </div>
             <ul>
                 {articles.map(article => (
                     <li key={article.url}>
@@ -33,6 +31,7 @@ function News({ category }) {
                 ))}
             </ul>
         </div>
+        </>
     );
 }
 

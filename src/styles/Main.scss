@@ -8,10 +8,20 @@
 
     .news {
         width: 50%;
-        height: 90vh;
         padding: 0 2vw;
-        overflow-y: scroll;
-        scrollbar-width: thin;
+
+        .news-container {
+            height: 90vh;
+            overflow-y: scroll;
+
+            ul {
+                padding: 0;
+
+                li {
+                    list-style: none;
+                }
+            }
+        }
     }
 
     .our-picks {
