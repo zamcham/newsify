@@ -1,14 +1,12 @@
 import './styles/Navbar.scss';
 import Navbar from './components/Navbar';
-import Categories from './components/Categories';
+import Main from './components/Main';
 
 function App() {
   return (
     <main>
       <Navbar />
-      <div className="main-container">
-        <Categories />
-      </div>
+      <Main />
     </main>
   );
 }
