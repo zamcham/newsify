@@ -31,7 +31,7 @@ function Main() {
     };
   
     return (
-      <>
+      <div className='main'>
         <div className="sidebar">
           <h2>Categories</h2>
           <ul>
@@ -48,10 +48,10 @@ function Main() {
             ))}
           </ul>
         </div>
-        <div className="main">
+        <div className="news">
           <News category={selectedCategory} />
         </div>
-      </>
+      </div>
 
     );
   }

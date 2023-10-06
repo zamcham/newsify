@@ -1,0 +1,13 @@
+.main {
+    display: flex;
+    padding: 0 5vw;
+
+    .sidebar {
+        width: 30vw;
+    }
+
+    .news {
+        height: 90vh;
+        overflow: scroll;
+    }
+}
