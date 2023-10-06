@@ -11,7 +11,7 @@ const NewsCard = ({ image, title, source, author, date }) => {
 
     return (
         <div className="card">
-            <div className="cover">
+            <div className="cover-img">
                 <img src={image} alt={title} />
             </div>
             <div className="details">
