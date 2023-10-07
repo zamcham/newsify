@@ -1,0 +1,53 @@
+.main {
+    display: flex;
+    padding: 5vh 5vw;
+    background-color: #efefef;
+
+    .sidebar {
+        width: 12%;
+        max-width: 12%;
+        height: 80vh;
+        margin-top: 6vh;
+        background-color: white;
+        border-radius: 25px;
+        padding: 0 25px;
+        text-align: left;
+
+        ul {
+            padding: 0;
+            li {
+                list-style: none;
+            }
+        }
+    }
+
+    .news {
+        width: 55%;
+        padding: 0 2vw;
+
+        .headline {
+            height: 5vh;
+        }
+
+        .news-container {
+            height: 80vh;
+            overflow-y: scroll;
+
+            ul {
+                padding: 0;
+
+                li {
+                    list-style: none;
+                }
+            }
+        }
+    }
+
+    .nfl {
+        margin-top: 6vh;
+        width: 30%;
+        height: 80vh;
+        background-color: white;
+        border-radius: 25px;
+    }
+}
