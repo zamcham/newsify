@@ -7,10 +7,14 @@
     background-color: #efefef;
     position: relative;
 
-    h1,
-    h2 {
+    h1 {
         font-size: 2rem;
         font-weight: 500;
+    }
+
+    h2 {
+        font-size: 2rem;
+        font-weight: 700;
     }
 
     .sidebar {
@@ -24,8 +28,16 @@
 
         ul {
             padding: 0;
+
             li {
+                font-size: 1.5rem;
+                font-weight: 400;
                 list-style: none;
+                margin: 15px 0;
+            }
+
+            li:hover {
+                cursor: pointer;
             }
         }
     }
@@ -39,7 +51,7 @@
             height: 5vh;
             position: absolute;
             top: -60px;
-            
+
             .category-name {
                 font-weight: 800;
             }
