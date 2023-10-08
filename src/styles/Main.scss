@@ -1,7 +1,9 @@
 .main {
     height: 90vh;
     display: flex;
-    padding: 5vh 5vw;
+    padding-top: 10vh;
+    padding-left: 5vw;
+    padding-right: 5vw;
     background-color: #efefef;
     position: relative;
 
@@ -36,6 +38,7 @@
         .news-container {
             height: 90vh;
             overflow-y: scroll;
+            border-radius: 25px;
 
             ul {
                 padding: 0;
