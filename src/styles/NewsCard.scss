@@ -1,3 +1,5 @@
+$red: #b72a36;
+
 .card {
     max-width: 100%;
     background-color: white;
@@ -8,6 +10,11 @@
     a {
         text-decoration: none;
         color: black;
+    }
+
+    a:hover {
+        cursor: pointer;
+        color: $red;
     }
 
 
