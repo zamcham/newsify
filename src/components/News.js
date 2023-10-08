@@ -16,7 +16,7 @@ function News({ category }) {
     return (
         <>
         <div className='headline'>
-            <h2>{category} Headlines</h2>
+            <h1>{category} Headlines</h1>
         </div>
         <div className='news-container'>
             <ul>
