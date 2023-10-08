@@ -5,8 +5,12 @@ function News({ category }) {
     const [articles, setArticles] = useState([]);    
 
     useEffect(() => {
+        const currentDate = new Date();
+        currentDate.setDate(currentDate.getDate() - 1);
+        const formattedDate = currentDate.toISOString().split('T')[0];
+
         async function fetchNews() {
-            const response = await fetch(`https://newsapi.org/v2/everything?q=${category}&apiKey=0360eaf44b2547a3845fce34e7d44ed7`);
+            const response = await fetch(`https://newsapi.org/v2/everything?q=${category}&apiKey=0360eaf44b2547a3845fce34e7d44ed7&from=${formattedDate}&to=${formattedDate}`);
             const data = await response.json();
             setArticles(data.articles);
         }
