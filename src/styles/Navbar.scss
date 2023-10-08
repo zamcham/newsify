@@ -77,4 +77,10 @@ nav {
       z-index: 1;
     }
   }
+
+  .active {
+    a {
+      color: $red !important;
+    }
+  }
 }
