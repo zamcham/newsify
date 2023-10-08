@@ -54,7 +54,6 @@ function Main() {
           <h2>Football Games</h2>
         </div>
       </div>
-
     );
   }
 
