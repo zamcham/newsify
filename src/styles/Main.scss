@@ -1,13 +1,28 @@
+$red: #d93e1a;
+
 .main {
+    height: 90vh;
     display: flex;
-    padding: 5vh 5vw;
+    padding-top: 10vh;
+    padding-left: 5vw;
+    padding-right: 5vw;
     background-color: #efefef;
+    position: relative;
+
+    h1 {
+        font-size: 2rem;
+        font-weight: 500;
+    }
+
+    h2 {
+        font-size: 2rem;
+        font-weight: 700;
+    }
 
     .sidebar {
         width: 12%;
         max-width: 12%;
         height: 80vh;
-        margin-top: 6vh;
         background-color: white;
         border-radius: 25px;
         padding: 0 25px;
@@ -15,8 +30,17 @@
 
         ul {
             padding: 0;
+
             li {
+                font-size: 1.5rem;
+                font-weight: 400;
                 list-style: none;
+                margin: 15px 0;
+            }
+
+            li:hover {
+                cursor: pointer;
+                color: $red;
             }
         }
     }
@@ -24,17 +48,26 @@
     .news {
         width: 55%;
         padding: 0 2vw;
+        position: relative;
 
         .headline {
             height: 5vh;
+            position: absolute;
+            top: -60px;
+
+            .category-name {
+                font-weight: 800;
+            }
         }
 
         .news-container {
-            height: 80vh;
+            height: 90vh;
             overflow-y: scroll;
+            border-radius: 25px;
 
             ul {
                 padding: 0;
+                margin-top: 0;
 
                 li {
                     list-style: none;
@@ -44,10 +77,17 @@
     }
 
     .nfl {
-        margin-top: 6vh;
         width: 30%;
         height: 80vh;
         background-color: white;
         border-radius: 25px;
+        padding: 0 25px;
+        position: relative;
+
+        .headline {
+            height: 5vh;
+            position: absolute;
+            top: -60px;
+        }
     }
 }

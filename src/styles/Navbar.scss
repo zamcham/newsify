@@ -1,3 +1,5 @@
+$red: #d93e1a;
+
 html {
   font-size: 62.5%;
 }
@@ -12,7 +14,7 @@ nav {
   align-items: center;
   font-size: 1.5rem;
   background-color: white;
-  padding: 0 25px;
+  padding: 0 5vw;
 
   div {
     flex: 1;
@@ -28,9 +30,17 @@ nav {
 
     li {
       margin: 0 10px;
+      font-size: 1.6rem;
+      font-weight: 500;
+
       a {
         color: black;
         text-decoration: none;
+      }
+
+      a:hover {
+        cursor: pointer;
+        color: $red;
       }
     }
   }
@@ -38,5 +48,33 @@ nav {
   .reading-list-icon {
     justify-content: center;
     align-items: center;
+    position: relative;
+
+    .menu-icon {
+      font-size: 2rem;
+      color: black;
+    }
+
+    .menu-icon:hover {
+      cursor: pointer;
+      color: $red;
+    }
+
+    .reading-list-number {
+      background-color: $red;
+      color: white;
+      font-size: 1.2rem;
+      font-weight: 700;
+      position: absolute;
+      top: -20px;
+      left: 51%;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 1;
+    }
   }
 }
