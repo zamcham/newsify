@@ -1,3 +1,5 @@
+$red: #b72a36;
+
 html {
   font-size: 62.5%;
 }
@@ -28,9 +30,17 @@ nav {
 
     li {
       margin: 0 10px;
+      font-size: 1.6rem;
+      font-weight: 500;
+
       a {
         color: black;
         text-decoration: none;
+      }
+
+      a:hover {
+        cursor: pointer;
+        color: $red;
       }
     }
   }
