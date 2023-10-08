@@ -81,5 +81,13 @@ $red: #b72a36;
         height: 80vh;
         background-color: white;
         border-radius: 25px;
+        padding: 0 25px;
+        position: relative;
+
+        .headline {
+            height: 5vh;
+            position: absolute;
+            top: -60px;
+        }
     }
 }

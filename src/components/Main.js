@@ -51,7 +51,7 @@ function Main() {
           <News category={selectedCategory} />
         </div>
         <div className="nfl">
-          <h2>Football Games</h2>
+          <h2 className='headline'>Football Games</h2>
         </div>
       </div>
     );
