@@ -19,8 +19,8 @@ const Navbar = () => {
                 </ul>
                 <div className="actions">
                 <div className="reading-list-icon">
-                    <FontAwesomeIcon icon={faBook} />
-                    <p>{readingListTotal}</p>
+                    <FontAwesomeIcon icon={faBook} className='menu-icon'/>
+                    <p className='reading-list-number'>{readingListTotal}</p>
                 </div>
                 <input type="text" placeholder="Search..."/>
                 </div>
