@@ -8,11 +8,21 @@ function News({ category }) {
         const currentDate = new Date();
         currentDate.setDate(currentDate.getDate() - 1);
         const formattedDate = currentDate.toISOString().split('T')[0];
+        const apiKey = process.env.REACT_APP_NEWS_API_KEY;
+
+        const apiUrl = `https://newsapi.org/v2/everything?q=${category}&apiKey=${apiKey}&from=${formattedDate}&to=${formattedDate}`;
 
         async function fetchNews() {
-            const response = await fetch(`https://newsapi.org/v2/everything?q=${category}&apiKey=0360eaf44b2547a3845fce34e7d44ed7&from=${formattedDate}&to=${formattedDate}`);
-            const data = await response.json();
-            setArticles(data.articles);
+            try {
+                const response = await fetch(apiUrl);
+                if (!response.ok) {
+                    throw new Error(`Request failed with status: ${response.status}`);
+                }
+                const data = await response.json();
+                setArticles(data.articles);
+            } catch (error) {
+                console.error(error);
+            }
         }
         fetchNews();
     }, [category]);
