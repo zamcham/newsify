@@ -27,6 +27,7 @@ function News({ category }) {
         fetchNews();
     }, [category]);
 
+    // Check if articles is empty or 'removed'
     return (
         <>
         <div className='headline'>
