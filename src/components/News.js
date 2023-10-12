@@ -27,7 +27,8 @@ function News({ category }) {
         fetchNews();
     }, [category]);
 
-    // Check if articles is empty or 'removed'
+    // TODO: Check if articles is empty or 'removed'
+    // check if image is broken or null
     return (
         <>
         <div className='headline'>
