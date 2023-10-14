@@ -40,6 +40,7 @@ function News({ category }) {
             <ul>
                 {articles.map(article => (
                     <li key={article.url}>
+                    
                         <NewsCard
                             image={article.urlToImage}
                             title={article.title}
