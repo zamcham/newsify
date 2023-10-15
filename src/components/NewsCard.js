@@ -1,6 +1,25 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+
+function checkImage(imageUrl) {
+    return new Promise((resolve) => {
+        const img = new Image();
+        img.onload = () => resolve(imageUrl);
+        img.onerror = () => resolve('imageNotFound.png');
+        img.src = imageUrl;
+    });
+}   
 
 const NewsCard = ({ image, title, source, author, date, articleLink }) => {
+
+    const [imageUrl, setImageUrl] = useState('');
+    
+    useEffect(() => {
+        async function validateImage() {
+            const validImageUrl = await checkImage(image);
+            setImageUrl(validImageUrl);
+        }
+        validateImage();
+    }, [image]);
 
     function formatDate(apiDate) {
         const options = { year: 'numeric', month: 'long', day: 'numeric' };
@@ -13,7 +32,7 @@ const NewsCard = ({ image, title, source, author, date, articleLink }) => {
         <div className="card">
             <div className="cover-img">
                 <a href={articleLink} target='_blank'>
-                    <img src={image} alt={title} />
+                    <img src={imageUrl} alt={title} />
                 </a>  
             </div>
             <div className="content">

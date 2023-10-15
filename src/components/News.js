@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import NewsCard from './NewsCard';
+import {franc, francAll} from 'franc'
 
 function News({ category }) {
-    const [articles, setArticles] = useState([]);    
+    const [articles, setArticles] = useState([]);
 
     useEffect(() => {
         const currentDate = new Date();
@@ -19,7 +20,16 @@ function News({ category }) {
                     throw new Error(`Request failed with status: ${response.status}`);
                 }
                 const data = await response.json();
-                setArticles(data.articles);
+                const englishArticles = data.articles.filter(article => {
+                    try {
+                        const detectedLanguageCode = franc(article.title);
+                        return detectedLanguageCode === 'eng';
+                    } catch (error) {
+                        console.error(`Error detecting language for article: ${article.title}`);
+                        return false;
+                    }
+                });
+                setArticles(englishArticles);
             } catch (error) {
                 console.error(error);
             }
@@ -38,6 +48,7 @@ function News({ category }) {
             <ul>
                 {articles.map(article => (
                     <li key={article.url}>
+                    
                         <NewsCard
                             image={article.urlToImage}
                             title={article.title}
