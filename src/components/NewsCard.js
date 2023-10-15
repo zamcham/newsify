@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-const franc = require('franc');
 
 function checkImage(imageUrl) {
     return new Promise((resolve) => {

@@ -1,5 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import NewsCard from './NewsCard';
+const franc = require('franc');
+
+function hasNonEnglishCharacters(str) {
+    return /[^\u0000-\u007f]/.test(str); // Check for non-ASCII characters
+}
 
 function News({ category }) {
     const [articles, setArticles] = useState([]);    
@@ -19,7 +24,16 @@ function News({ category }) {
                     throw new Error(`Request failed with status: ${response.status}`);
                 }
                 const data = await response.json();
-                setArticles(data.articles);
+                const englishArticles = data.articles.filter(article => {
+                    try {
+                        const detectedLanguageCode = franc(article.title);
+                        return detectedLanguageCode === 'eng';
+                    } catch (error) {
+                        console.error(`Error detecting language for article: ${article.title}`);
+                        return false;
+                    }
+                });
+                setArticles(englishArticles);
             } catch (error) {
                 console.error(error);
             }
@@ -27,8 +41,6 @@ function News({ category }) {
         fetchNews();
     }, [category]);
 
-    // TODO: Check if articles is empty or 'removed'
-    // check if image is broken or null
     return (
         <>
         <div className='headline'>
