@@ -1,13 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import NewsCard from './NewsCard';
-const franc = require('franc');
-
-function hasNonEnglishCharacters(str) {
-    return /[^\u0000-\u007f]/.test(str); // Check for non-ASCII characters
-}
+import {franc, francAll} from 'franc'
 
 function News({ category }) {
-    const [articles, setArticles] = useState([]);    
+    const [articles, setArticles] = useState([]);
 
     useEffect(() => {
         const currentDate = new Date();
