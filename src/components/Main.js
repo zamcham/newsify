@@ -8,7 +8,6 @@ const categories = [
   "Business",
   "Entertainment",
   "Health",
-];
   "Science",
   "Sports",
   "World",
@@ -33,7 +32,6 @@ function Main() {
   const handleCategoryClick = (category) => {
     setSelectedCategory(category);
   };
-}
 
   return (
     <div className="main">
@@ -61,5 +59,7 @@ function Main() {
     </div>
   );
 }
+
+
 
 export default Main;
