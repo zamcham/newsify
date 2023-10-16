@@ -1,9 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import NewsCard from './NewsCard';
 import {franc, francAll} from 'franc'
 
 function News({ category }) {
     const [articles, setArticles] = useState([]);
+    const newsContainerRef = useRef(null);
 
     useEffect(() => {
         const currentDate = new Date();
@@ -37,6 +38,13 @@ function News({ category }) {
         fetchNews();
     }, [category]);
 
+    useEffect(() => {
+        if (newsContainerRef.current) {
+            newsContainerRef.current.scrollTop = 0;
+        }
+    }, [category]);
+}
+
     return (
         <>
         <div className='headline'>
@@ -44,7 +52,7 @@ function News({ category }) {
               <span className='category-name'>{category}</span> Headlines
             </h1>
         </div>
-        <div className='news-container'>
+        <div className='news-container' ref={newsContainerRef}>
             <ul>
                 {articles.map(article => (
                     <li key={article.url}>
