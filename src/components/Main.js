@@ -8,7 +8,6 @@ const categories = [
   "Business",
   "Entertainment",
   "Health",
-];
   "Science",
   "Sports",
   "World",
@@ -55,7 +54,5 @@ function Main() {
     </div>
   );
 }
-
-
 
 export default Main;
