@@ -44,7 +44,7 @@ function News({ category }) {
               <span className='category-name'>{category}</span> Headlines
             </h1>
         </div>
-        <div className='news-container'>
+        <div className='news-container' >
             <ul>
                 {articles.map(article => (
                     <li key={article.url}>
