@@ -48,7 +48,10 @@ const NewsCard = ({ image, title, source, author, date, articleLink }) => {
                     <p>{formatDate(date)}</p>   
                 </div>
                 <div className='add-reading-list'>
-                    <FontAwesomeIcon icon={faCirclePlus} className='add-icon'/>
+                    <span>
+                        <FontAwesomeIcon icon={faCirclePlus} className='add-icon'/>
+                        <p>Add to reading list </p>
+                    </span>
                 </div>
             </div>
         </div>
