@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState } from "react";
 import News from "./News";
 
 const categories = [
@@ -23,11 +23,6 @@ const categories = [
 
 function Main() {
   const [selectedCategory, setSelectedCategory] = useState(categories[0]);
-  const newsRef = useRef(null);
-
-  useEffect(() => {
-    newsRef.current.scrollTo(0, 0);
-  }, [selectedCategory]);
 
   const handleCategoryClick = (category) => {
     setSelectedCategory(category);
@@ -50,7 +45,7 @@ function Main() {
           ))}
         </ul>
       </div>
-      <div className="news" ref={newsRef}>
+      <div className="news">
         <News category={selectedCategory} />
       </div>
       <div className="nfl">
@@ -59,7 +54,5 @@ function Main() {
     </div>
   );
 }
-
-
 
 export default Main;
