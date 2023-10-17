@@ -40,34 +40,6 @@ function News({ category }) {
     fetchNews();
   }, [category]);
 
-<<<<<<< HEAD
-    return (
-        <>
-        <div className='headline'>
-            <h1>
-              <span className='category-name'>{category}</span> Headlines
-            </h1>
-        </div>
-        <div className='news-container' >
-            <ul>
-                {articles.map(article => (
-                    <li key={article.url}>
-                    
-                        <NewsCard
-                            image={article.urlToImage}
-                            title={article.title}
-                            source={article.source.name}
-                            author={article.author}
-                            date={article.publishedAt}
-                            articleLink={article.url}
-                        />
-                    </li>
-                ))}
-            </ul>
-        </div>
-        </>
-    );
-=======
   useEffect(() => {
     if (newsContainerRef.current) {
       newsContainerRef.current.scrollTop = 0;
@@ -99,7 +71,6 @@ function News({ category }) {
       </div>
     </>
   );
->>>>>>> a9946643817786c225f8cf6bc9e546eaa26c4419
 }
 
 export default News;
