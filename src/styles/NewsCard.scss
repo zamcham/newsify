@@ -30,4 +30,15 @@ $red: #d93e1a;
         }
     }
 
+    .details {
+        display: flex;
+        justify-content: space-between;
+        font-size: 1.5rem;
+
+        .add-reading-list {
+            color: green;
+            font-size: 2.5rem;
+        }
+    }
+
 }

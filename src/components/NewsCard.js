@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCirclePlus } from '@fortawesome/free-solid-svg-icons';
 
 function checkImage(imageUrl) {
     return new Promise((resolve) => {
@@ -41,8 +43,13 @@ const NewsCard = ({ image, title, source, author, date, articleLink }) => {
                 </a>
             </div>
             <div className="details">
-                <p>{source} • {author} </p>
-                <p>{formatDate(date)}</p>   
+                <div>
+                    <p>{source} • {author} </p>
+                    <p>{formatDate(date)}</p>   
+                </div>
+                <div className='add-reading-list'>
+                    <FontAwesomeIcon icon={faCirclePlus} className='add-icon'/>
+                </div>
             </div>
         </div>
     );
