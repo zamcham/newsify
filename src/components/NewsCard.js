@@ -13,7 +13,7 @@ function checkImage(imageUrl) {
     });
 }   
 
-const NewsCard = ({ articleObject, image, title, source, author, date, articleLink }) => {
+const NewsCard = ({ articleObject, image, title, source, date, articleLink }) => {
     const dispatch = useDispatch();
     const [imageUrl, setImageUrl] = useState('');
     const [isAdded, setIsAdded] = useState(false);
@@ -52,7 +52,7 @@ const NewsCard = ({ articleObject, image, title, source, author, date, articleLi
             </div>
             <div className="details">
                 <div>
-                    <p>{source} • {author} </p>
+                    <p>{source}</p>
                     <p>{formatDate(date)}</p>   
                 </div>
                 <div className='add-reading-list'>

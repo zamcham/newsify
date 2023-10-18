@@ -2,7 +2,7 @@ const ReadingListCard = ({ article }) => {
     return (
         <div className="readin-list-card">
             <div className="card-head">
-                <img src={article.urlToImage} alt={article.title} />
+                <img src={article.image_url} alt={article.title} />
             </div>
             <div className="card-body">
                 <h4 className="card-title">{article.title}</h4>
