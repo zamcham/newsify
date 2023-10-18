@@ -38,7 +38,7 @@ function News({ category }) {
     <>
       <div className="headline">
         <h1>
-          <span className="category-name">{category}</span> Headlines
+          <span className="category-name">{category.charAt(0).toUpperCase() + category.slice(1).toLowerCase()}</span> Headlines
         </h1>
       </div>
       <div className="news-container" ref={newsContainerRef}>
