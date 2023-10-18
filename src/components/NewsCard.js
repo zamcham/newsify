@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCirclePlus, faCircleMinus } from '@fortawesome/free-solid-svg-icons';
-import { addToReadingList } from '../features/readingList/readingListSlice';
+import { toggleNewAddition } from '../features/readingList/readingListSlice';
 
 function checkImage(imageUrl) {
     return new Promise((resolve) => {
@@ -33,7 +33,7 @@ const NewsCard = ({ articleObject, image, title, source, author, date, articleLi
     } 
 
     const handleAddButtonClick = () => {
-        dispatch(addToReadingList(articleObject));
+        dispatch(toggleNewAddition(articleObject));
         setIsAdded(!isAdded);
     };
 
