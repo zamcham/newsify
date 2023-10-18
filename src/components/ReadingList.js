@@ -1,5 +1,6 @@
 import React from "react";
 import { UseSelector, useSelector } from "react-redux/es/hooks/useSelector";
+import ReadingListCard from "./ReadingListCard";
 
 const ReadingList = () => {
     const { newsList, total } = useSelector((store) => store.readingList);
@@ -9,7 +10,13 @@ const ReadingList = () => {
             {total === 0 ? (
                 <p>You have not added any article yet</p>
             ) : (
-                <p>Your articles will show up here</p>
+                <ul>
+                    {newsList.map((article) => (
+                        <li key={article.id}>
+                            <ReadingListCard article={article} />
+                        </li>
+                    ))}
+                </ul>
                 )}
         </div>
     );
