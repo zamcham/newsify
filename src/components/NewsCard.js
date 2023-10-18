@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
+import { useDispatch } from 'react-redux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCirclePlus } from '@fortawesome/free-solid-svg-icons';
+import { addToReadingList } from '../features/readingList/readingListSlice';
 
 function checkImage(imageUrl) {
     return new Promise((resolve) => {
@@ -11,8 +13,8 @@ function checkImage(imageUrl) {
     });
 }   
 
-const NewsCard = ({ image, title, source, author, date, articleLink }) => {
-
+const NewsCard = ({ articleObject, image, title, source, author, date, articleLink }) => {
+    const dispatch = useDispatch();
     const [imageUrl, setImageUrl] = useState('');
     
     useEffect(() => {
@@ -50,7 +52,7 @@ const NewsCard = ({ image, title, source, author, date, articleLink }) => {
                 <div className='add-reading-list'>
                     <span>
                         <FontAwesomeIcon icon={faCirclePlus} className='add-icon'/>
-                        <p>Add to reading list </p>
+                        <a className='add-button' onClick={()=>dispatch(addToReadingList(articleObject))}>Add to reading list </a>
                     </span>
                 </div>
             </div>

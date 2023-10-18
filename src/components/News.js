@@ -58,6 +58,7 @@ function News({ category }) {
           {articles.map((article) => (
             <li key={article.url}>
               <NewsCard
+                articleObject={article}
                 image={article.urlToImage}
                 title={article.title}
                 source={article.source.name}
