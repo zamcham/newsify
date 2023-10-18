@@ -22,7 +22,7 @@ export const readingListSlice = createSlice({
                 console.log('Removing article from reading list');
                 return {
                     ...state,
-                    newsList: state.newsList.filter((news) => news.id !== action.payload.id),
+                    newsList: state.newsList.filter((news) => news.source.name !== action.payload.source.name),
                     total: state.total - 1,
                 };
             }
