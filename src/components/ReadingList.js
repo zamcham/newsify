@@ -6,7 +6,7 @@ const ReadingList = () => {
     const { newsList, total } = useSelector((store) => store.readingList);
 
     return (
-        <div className="main">
+        <div className="ReadingListContainer">
             {total === 0 ? (
                 <p>You have not added any article yet</p>
             ) : (

@@ -2,6 +2,7 @@ import { useState } from 'react';
 import './styles/Navbar.scss';
 import './styles/NewsCard.scss';
 import './styles/Main.scss';
+import './styles/ReadingList.scss';
 import Navbar from './components/Navbar';
 import Main from './components/Main';
 import ReadingList from './components/ReadingList';

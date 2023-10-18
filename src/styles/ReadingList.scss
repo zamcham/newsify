@@ -1,0 +1,52 @@
+.ReadingListContainer {
+    height: 90vh;
+    padding-top: 10vh;
+    padding-left: 5vw;
+    padding-right: 5vw;
+    background-color: #efefef;
+    position: relative;
+    overflow: scroll;
+
+    ul {
+        display: flex;
+        flex-wrap: wrap;
+
+        li {
+            list-style: none;
+        }
+    }
+
+    h4 {
+        font-size: 1.5rem;
+    }
+
+    p {
+        font-size: 1.2rem;
+    }
+
+    .readin-list-card {
+        background-color: white;
+        width: 300px;
+        padding: 15px;
+        margin: 15px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border-radius: 15px;
+
+        .card-head {
+            height: 250px;
+            width: 100%;
+            overflow: hidden;
+            border-radius: 5px;
+    
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+
+    }
+
+}
