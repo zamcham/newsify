@@ -1,4 +1,8 @@
 import React, { useEffect, useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCirclePlus, faCircleMinus } from '@fortawesome/free-solid-svg-icons';
+import { toggleNewAddition } from '../features/readingList/readingListSlice';
 
 function checkImage(imageUrl) {
     return new Promise((resolve) => {
@@ -9,9 +13,10 @@ function checkImage(imageUrl) {
     });
 }   
 
-const NewsCard = ({ image, title, source, author, date, articleLink }) => {
-
+const NewsCard = ({ articleObject, image, title, source, author, date, articleLink }) => {
+    const dispatch = useDispatch();
     const [imageUrl, setImageUrl] = useState('');
+    const [isAdded, setIsAdded] = useState(false);
     
     useEffect(() => {
         async function validateImage() {
@@ -27,6 +32,11 @@ const NewsCard = ({ image, title, source, author, date, articleLink }) => {
         return formattedDate;
     } 
 
+    const handleAddButtonClick = () => {
+        dispatch(toggleNewAddition(articleObject));
+        setIsAdded(!isAdded);
+    };
+
 
     return (
         <div className="card">
@@ -41,8 +51,18 @@ const NewsCard = ({ image, title, source, author, date, articleLink }) => {
                 </a>
             </div>
             <div className="details">
-                <p>{source} • {author} </p>
-                <p>{formatDate(date)}</p>   
+                <div>
+                    <p>{source} • {author} </p>
+                    <p>{formatDate(date)}</p>   
+                </div>
+                <div className='add-reading-list'>
+                    <span className={`${isAdded ? 'added' : ''}`} onClick={handleAddButtonClick}>
+                        <FontAwesomeIcon icon={isAdded ? faCircleMinus : faCirclePlus} className='add-icon'/>
+                        <a className={'add-button'}>
+                            {isAdded ? 'Remove from reading list' : 'Add to reading list'}
+                        </a>                    
+                    </span>
+                </div>
             </div>
         </div>
     );

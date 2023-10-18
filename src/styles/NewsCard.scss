@@ -1,4 +1,7 @@
 $red: #d93e1a;
+$light-red: #fadede;
+$green: #6dab3b;
+$light-green: #e6f5e3;
 
 .card {
     max-width: 100%;
@@ -27,6 +30,75 @@ $red: #d93e1a;
             width: 100%;
             height: 100%;
             object-fit: cover;
+        }
+    }
+
+    .details {
+        display: flex;
+        justify-content: space-between;
+        font-size: 1.5rem;
+
+        div {
+            flex: 1;
+        }
+
+        .add-reading-list {
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+
+            span {
+                display: flex;
+                color: $green;
+                align-items: center;
+                padding: 10px;
+                background-color: $light-green;
+                border-radius: 25px;
+                border: 1.5px solid $green;
+
+                .add-icon {
+                    font-size: 2.2rem;
+                }
+
+                a {
+                    margin: 0;
+                    margin-left: 5px;
+                    color: $green;
+                }
+
+                &.added {
+                    background-color: $light-red;
+                    color: $red;
+                    border: 1.5px solid $red;
+
+                    a {
+                        color: $red;
+                    }
+                }
+            }
+
+            span:hover {
+                cursor: pointer;
+                background-color: $green;
+                color: $light-green;
+                border: 1.5px solid $green;
+
+                a {
+                    color: $light-green;
+                }
+
+                &.added {
+                    background-color: $red;
+                    color: $light-red;
+                    border: 1.5px solid $light-red;
+
+                    a {
+                        color: $light-red;
+                    }
+                }
+            }
+
         }
     }
 
