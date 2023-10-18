@@ -12,7 +12,6 @@ const Navbar = () => {
                 </div>
                 <ul>
                     <li className='active'><a href="#"><FontAwesomeIcon icon={faHouse} className='menu-icon'/> Home</a></li>
-                    <li><a href="#">Popular</a></li>
                     <li><a href="#">Reading List</a></li>
                 </ul>
                 <div className="actions">
