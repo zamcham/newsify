@@ -2,23 +2,16 @@ import React, { useState } from "react";
 import News from "./News";
 
 const categories = [
-  "USA",
-  "Politics",
-  "Technology",
-  "Business",
-  "Entertainment",
-  "Health",
+  "General",
   "Science",
   "Sports",
-  "World",
+  "Business",
+  "Health",
+  "Entertainment",
+  "Tech",
+  "Politics",
   "Travel",
   "Food",
-  "Fashion",
-  "Environment",
-  "Education",
-  "Finance",
-  "Gaming",
-  "Music",
 ];
 
 function Main() {
