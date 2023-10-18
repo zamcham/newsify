@@ -39,7 +39,7 @@ function Main() {
         </ul>
       </div>
       <div className="news">
-        <News category={selectedCategory} />
+        <News category={selectedCategory.toLowerCase()} />
       </div>
       <div className="nfl">
         <h2 className="headline">Football Games</h2>
