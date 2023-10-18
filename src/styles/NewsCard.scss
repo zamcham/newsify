@@ -1,6 +1,7 @@
 $red: #d93e1a;
 $light-red: #fadede;
 $green: #6dab3b;
+$light-green: #e6f5e3;
 
 .card {
     max-width: 100%;
@@ -66,7 +67,18 @@ $green: #6dab3b;
                     color: $red;
                 }
             }
-            
+
+            span:hover {
+                cursor: pointer;
+                background-color: $light-green;
+                color: $green;
+                border: 1.5px solid $green;
+
+                a {
+                    color: $green;
+                }
+            }
+
         }
     }
 
