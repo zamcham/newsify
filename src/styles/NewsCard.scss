@@ -66,6 +66,16 @@ $light-green: #e6f5e3;
                     margin-left: 5px;
                     color: $red;
                 }
+
+                &.added {
+                    background-color: $light-green;
+                    color: $green;
+                    border: 1.5px solid $green;
+
+                    a {
+                        color: $green;
+                    }
+                }
             }
 
             span:hover {

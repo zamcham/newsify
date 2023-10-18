@@ -56,12 +56,9 @@ const NewsCard = ({ articleObject, image, title, source, author, date, articleLi
                     <p>{formatDate(date)}</p>   
                 </div>
                 <div className='add-reading-list'>
-                    <span>
+                    <span className={`${isAdded ? 'added' : ''}`}>
                         <FontAwesomeIcon icon={faCirclePlus} className='add-icon'/>
-                        <a
-                            className={`add-button ${isAdded ? 'added' : ''}`} // Conditionally add the 'added' class
-                            onClick={handleAddButtonClick}
-                        >
+                        <a className={'add-button'} onClick={handleAddButtonClick}>
                             Add to reading list
                         </a>                    
                     </span>
