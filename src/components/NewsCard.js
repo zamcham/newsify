@@ -56,9 +56,9 @@ const NewsCard = ({ articleObject, image, title, source, author, date, articleLi
                     <p>{formatDate(date)}</p>   
                 </div>
                 <div className='add-reading-list'>
-                    <span className={`${isAdded ? 'added' : ''}`}>
+                    <span className={`${isAdded ? 'added' : ''}`} onClick={handleAddButtonClick}>
                         <FontAwesomeIcon icon={isAdded ? faCircleMinus : faCirclePlus} className='add-icon'/>
-                        <a className={'add-button'} onClick={handleAddButtonClick}>
+                        <a className={'add-button'}>
                             {isAdded ? 'Remove from reading list' : 'Add to reading list'}
                         </a>                    
                     </span>

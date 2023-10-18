@@ -43,7 +43,6 @@ $light-green: #e6f5e3;
         }
 
         .add-reading-list {
-            color: $red;
             font-weight: 600;
             display: flex;
             align-items: center;
@@ -51,11 +50,12 @@ $light-green: #e6f5e3;
 
             span {
                 display: flex;
+                color: $green;
                 align-items: center;
                 padding: 10px;
-                background-color: $light-red;
+                background-color: $light-green;
                 border-radius: 25px;
-                border: 1.5px solid $red;
+                border: 1.5px solid $green;
 
                 .add-icon {
                     font-size: 2.2rem;
@@ -64,27 +64,6 @@ $light-green: #e6f5e3;
                 a {
                     margin: 0;
                     margin-left: 5px;
-                    color: $red;
-                }
-
-                &.added {
-                    background-color: $light-green;
-                    color: $green;
-                    border: 1.5px solid $green;
-
-                    a {
-                        color: $green;
-                    }
-                }
-            }
-
-            span:hover {
-                cursor: pointer;
-                background-color: $light-green;
-                color: $green;
-                border: 1.5px solid $green;
-
-                a {
                     color: $green;
                 }
 
@@ -95,6 +74,27 @@ $light-green: #e6f5e3;
 
                     a {
                         color: $red;
+                    }
+                }
+            }
+
+            span:hover {
+                cursor: pointer;
+                background-color: $green;
+                color: $light-green;
+                border: 1.5px solid $green;
+
+                a {
+                    color: $light-green;
+                }
+
+                &.added {
+                    background-color: $red;
+                    color: $light-red;
+                    border: 1.5px solid $light-red;
+
+                    a {
+                        color: $light-red;
                     }
                 }
             }
