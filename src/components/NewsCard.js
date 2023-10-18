@@ -16,6 +16,7 @@ function checkImage(imageUrl) {
 const NewsCard = ({ articleObject, image, title, source, author, date, articleLink }) => {
     const dispatch = useDispatch();
     const [imageUrl, setImageUrl] = useState('');
+    const [isAdded, setIsAdded] = useState(false);
     
     useEffect(() => {
         async function validateImage() {
@@ -30,6 +31,11 @@ const NewsCard = ({ articleObject, image, title, source, author, date, articleLi
         const formattedDate = new Date(apiDate).toLocaleDateString('en-US', options);
         return formattedDate;
     } 
+
+    const handleAddButtonClick = () => {
+        dispatch(addToReadingList(articleObject));
+        setIsAdded(!isAdded);
+    };
 
 
     return (
@@ -52,7 +58,12 @@ const NewsCard = ({ articleObject, image, title, source, author, date, articleLi
                 <div className='add-reading-list'>
                     <span>
                         <FontAwesomeIcon icon={faCirclePlus} className='add-icon'/>
-                        <a className='add-button' onClick={()=>dispatch(addToReadingList(articleObject))}>Add to reading list </a>
+                        <a
+                            className={`add-button ${isAdded ? 'added' : ''}`} // Conditionally add the 'added' class
+                            onClick={handleAddButtonClick}
+                        >
+                            Add to reading list
+                        </a>                    
                     </span>
                 </div>
             </div>
