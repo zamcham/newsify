@@ -11,6 +11,7 @@ function News({ category }) {
     currentDate.setDate(currentDate.getDate() - 1);
     const apiKey = process.env.REACT_APP_NEWS_API_KEY;
 
+    //TODO: Check on how to use react query to avoid multiple fetches
     const apiUrl = `https://api.thenewsapi.com/v1/news/all?&api_token=${apiKey}&language=en&limit=&categories=${category}`;
 
     async function fetchNews() {
